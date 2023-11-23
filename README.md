@@ -29,9 +29,6 @@ NewsHarbor is a news scraping application designed to simplify the process of ga
 ## Requirements
 - Internet connection
 
-## Support
-For any issues or feedback, please contact our support team at support@newsharbor.com.
-
 ## Contributing
 We welcome contributions to enhance the functionality and features of NewsHarbor. If you'd like to contribute, please fork the repository and submit a pull request.
 
