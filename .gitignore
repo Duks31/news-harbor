@@ -1,3 +1,6 @@
 data/
 secrets/ 
 logs/
+idea.txt
+*.db
+*.pyc

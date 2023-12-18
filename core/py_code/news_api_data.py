@@ -5,24 +5,33 @@ import logging
 
 from dotenv import load_dotenv
 
-load_dotenv("..\..\secrets\.env")
+load_dotenv("secrets\.env")
 api_key = os.environ.get("API_KEY")
 
-logging.basicConfig(filename= "..\\..\\logs\\news_api_data.log", filemode='w', format='%(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(
+    filename="logs\\news_api_data.log",
+    filemode="a",
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    datefmt="%m/%d/%Y %I:%M:%S %p",
+    level=logging.DEBUG,
+)
 
-def save_news_data():
+def news_data():
     if api_key:
         logging.info("API key loaded successfully")
     else:
         logging.error("API key not found, please check .env file")
-
+    
     url = f"https://newsapi.org/v2/top-headlines?language=en&apiKey={api_key}"
 
     response = requests.get(url)
 
-    with open("..\..\data\\news_api_data.json", "w") as f:
+    with open("data\\news_api_data.json", "w") as f:
         json.dump(response.json(), f, indent=4)
-        logging.info("Data saved successfully")
+        if response.status_code == 200:
+            logging.info("Data saved successfully")
+
+    return response.json()
 
 if __name__ == "__main__":
-    save_news_data()
+    news_data()
