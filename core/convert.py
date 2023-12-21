@@ -14,15 +14,14 @@ for article in articles:
     author = article["author"]
     title = article["title"]
     description = article["description"]
-    content = article["content"]
     url = article["url"]
 
-    articles_data.append([source_name, author, title, description, content, url])
+    articles_data.append([source_name, author, title, description, url])
 
 with open('..\\data\\data.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow([
-    'Source Name', 'Author', 'Title', 'Description', 'Content', 'URL'   
+    'Source Name', 'Author', 'Title', 'Description', 'URL'   
     ])
     logging.info("Data CONVERTED successfully")
-    writer.writerows(articles_data)
+    writer.writerows(articles_data) 
