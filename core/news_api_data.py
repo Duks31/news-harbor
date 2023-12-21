@@ -5,7 +5,7 @@ import logging
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path="..\\secrets\\.env", verbose=True)
-api_key = os.getenv("API_KEY")
+api_key = os.getenv("news_api_API_KEY")
 
 logging.basicConfig(
     filename="..\\logs\\news_api_data.log",
@@ -15,13 +15,14 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
+
 def news_data():
     if api_key:
         logging.info("API key loaded successfully")
     else:
         logging.error("API key not found, please check .env file")
 
-    url = f"https://newsapi.org/v2/top-headlines?language=en&apiKey={api_key}"
+    url = f"https://newsapi.org/v2/top-headlines?language=en&apiKey={api_key}&page=4"
 
     response = requests.get(url)
 
@@ -32,7 +33,5 @@ def news_data():
 
     return response.json()
 
-
 if __name__ == "__main__":
-    print(api_key)
     news_data()
