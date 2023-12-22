@@ -11,6 +11,7 @@ def filter_articles_with_info(sentiment):
 
 def main():
     st.title('News Harbor')
+    st.write('A harbor for sentimented news articles')
 
     sentiments = ['Positive', 'Neutral', 'Negative', 'Very Negative', 'Very Positive']
 

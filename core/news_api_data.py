@@ -15,7 +15,6 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
-
 def news_data():
     if api_key:
         logging.info("API key loaded successfully")
@@ -32,6 +31,3 @@ def news_data():
             logging.info("Data saved successfully")
 
     return response.json()
-
-if __name__ == "__main__":
-    news_data()
