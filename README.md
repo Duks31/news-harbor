@@ -8,7 +8,8 @@
 - [license](#license)
 
 ## Overview
-News Harbor is a news pplatform that is detects the sentiment of News articles. ![check out this demo](/assets/demo.gif)
+News Harbor is a news platform that detects the sentiment of News articles. 
+<!-- ![check out this demo](/assets/demo.gif) try google drive-->
 
 This is how the project workflow is: ![workflow](./assets/workflow.png)
 
