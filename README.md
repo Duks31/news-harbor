@@ -10,7 +10,7 @@
 ## Overview
 News Harbor is a news pplatform that is detects the sentiment of News articles. [check out this demo](.\assets\demo.mp4)
 
-This is how the project workflow is: ![workflow](assets\workflow.png)
+This is how the project workflow is: ![workflow](./assets/workflow.png)
 
 ## Usage
 ### How it works
